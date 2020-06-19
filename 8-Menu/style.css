@@ -218,50 +218,95 @@ html, body {
     margin: auto;
 }
 
-h2 {
+.title h2 {
     font-family: "Great-Vibes", cursive;
     color: rgb(235, 187, 54);
     text-align: center;
 }
 
-article.question {
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px;
-    padding: 20px;
-    background-color: #fff;
-    width: 80vw;
+.title::after {
+    content: "";
+    width: 500px;
     margin: auto;
-    
-    margin-top: 15px;
-}
-.question-title p{
-    font-weight: 600;
-    text-transform: capitalize;
-    display: inline;
-}
-
-.question-btn {
-    display: inline-block;
-    float: right;
-    color: var(--clr-red-light);
-    font-size: 1.2rem;
-    background: transparent;
-    border: none;
-    padding: 0;
-}
-
-.question-btn:focus {
-    outline: none;
-}
-
-.question-text::before {
-    margin-top: 15px;
-    content: '';
-    width: 100%;
     display: block;
-    border-top:  solid 4px var(--clr-primary-7);
+    border-bottom: 2px solid rgb(235, 187, 54);
+}
+.category {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+}
+.category li {
+    text-transform: uppercase;
+    border: 2px solid rgb(218, 163, 13);
+    border-radius: 15px;
+    padding: 8px;
+    display: inline-block;
+    background-color: rgb(247, 204, 85);
+    color: var(--clr-white);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.category li:hover {
+    background-color: var(--clr-black);
 }
 
-.hide {
-    display: none;
+.menu-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    margin-top: 40px;
+    width: 80vw;
+    gap: 1rem 2rem;
+}
+
+.menu-wrapper li {
+    padding: 10px;
+    background-color: var(--clr-white);
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    
+    gap: 1rem 1rem;
+}
+.item1 {
+    grid-row: 1 / 3;
+}
+.item4 {
+    grid-column: 2/4;
+}
+
+.imgdish {
+    margin: 3px;
+} 
+.imgdish img {
+    height: 250px;
+}
+
+.titledish {
+    text-transform: uppercase;
+    font-family: "Roboto", 'sans-serif';
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--clr-primary-3)
+}
+
+.pricedish {
+    justify-self: end;
+    font-family: "Roboto", 'sans-serif';
+    font-size: 1.4rem;
+    color: rgb(218, 163, 13);
+}
+
+
+@media screen and (max-width: 800px) {
+    .menu-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .menu-wrapper li {
+        grid-template-columns: 4fr 2fr 1fr;
+    
+    }
 }
